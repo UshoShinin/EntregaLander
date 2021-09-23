@@ -1,0 +1,40 @@
+.modal{
+    padding-top: 60px;
+}
+
+.modal>div>div{
+    height: 70px;
+}
+
+.campos{
+    height: max-content;
+    display:grid;
+    grid-template-columns: max-content max-content;
+    grid-column-gap:12px;
+    width: max-content;
+    margin:0 auto;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.campos>label{
+    font-size: 1.8em;
+}
+
+@media (max-width:1400px) {
+    .campos>label{
+        font-size: 1.3em;
+    }
+    .campos input{
+        font-size:1.3em;
+    }
+}
+
+@media (max-width:900px) {
+    .campos>label{
+        font-size: 1em;
+    }
+    .campos input{
+        font-size:1em;
+    }
+}
