@@ -10,7 +10,7 @@ app.use(express.json()); // To parse the incoming requests with JSON payloads
 const interfaz = require("./interfaz");
 
 // Have Node serve the files for our built React app
-app.use(express.static(path.resolve(__dirname, './cliente/barberiaLander/build')));
+app.use(express.static(path.resolve(__dirname, '../cliente/barberiaLander/build')));
 
 app.use("/datosFormularioAgenda", (req, res) => {
   let ret = interfaz.getDatosFormulario();
@@ -463,7 +463,7 @@ app.use("/cajaParaCalculos", (req, res) => {
 
 // All other GET requests not handled before will return our React app
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './cliente/barberiaLander/build', 'index.html'));
+  res.sendFile(path.resolve(__dirname, '../cliente/barberiaLander/build', 'index.html'));
 });
 
 //No escribir nada por debajo de esto
