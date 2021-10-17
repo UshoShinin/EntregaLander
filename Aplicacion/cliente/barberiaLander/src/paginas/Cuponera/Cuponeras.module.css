@@ -25,7 +25,7 @@
 }
 .ajuste > div{
   width:500px;
-  height:270px;
+  height:340px;
   border-radius: 30px;
 }
 
@@ -51,7 +51,8 @@
 .container > div .textP,
 .ajuste > div .textP {
   color: var(--clr-inActive);
-  font-size: 1.15em;
+  margin-top: 0.8em;
+  font-size: 1.4em;
   transition: color 180ms linear;
 }
 
