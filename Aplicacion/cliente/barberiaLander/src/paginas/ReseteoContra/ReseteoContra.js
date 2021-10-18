@@ -28,12 +28,16 @@ const Reseteo = (props) => {
       if(res.mensaje.codigo!==200){
           dispatch({type:'SHOW_MENSAJE',value:res.mensaje.mensaje})
       }else{
-          const number=res.mensaje.cliente.tel
+          const number=res.mensaje.cliente.tel;
           const text = '&text=Hola,%20su%20contraseña%20fue%20cambiada%20a%20inicio123.%20Por%20favor%20inicie%20sesión%20y%20cambie%20su%20contraseña.%20Si%20usted%20no%20solicitó%20este%20cambio%20comuníquese%20con%20nosotros.';
           window.location.href = "https://api.whatsapp.com/send?phone=+598"+number+''+text;
-      }
-      console.log(res.mensaje);
+      } 
   }
+  const getRespuestaEmpleado=(res) =>{
+      if(res.mensaje.codigo===200) dispatch({type:'RESET_CI_E'});
+      dispatch({type:'SHOW_MENSAJE',value:res.mensaje.mensaje});
+  }
+
   const submitRCE = (event) =>{
       event.preventDefault();
       if(!state.ciEmpleado.isValid) refCiE.current.focus();
@@ -46,7 +50,7 @@ const Reseteo = (props) => {
                 headers: { "Content-Type": "application/json" },
                 body: data,
               },
-              getRespuesta
+              getRespuestaEmpleado
             );
       }
       

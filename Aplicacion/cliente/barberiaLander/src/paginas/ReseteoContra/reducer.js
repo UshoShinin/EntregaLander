@@ -26,7 +26,9 @@ export const reducer = (state,action) =>{
                 value: state.ciEmpleado.value,
                 isValid: state.ciEmpleado.value.trim().length>0,
             }
-            };  
+            };
+        case "RESET_CI_E":
+            return {...state,ciEmpleado:{ ...initialState.ciEmpleado}};
         case "INPUT_CI_C":
             return {
             ...state,
