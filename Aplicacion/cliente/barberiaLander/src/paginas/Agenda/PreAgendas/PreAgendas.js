@@ -42,8 +42,8 @@ const PreAgendas = () => {
   };
 
   const getRespuesta = (res) => {
-    console.log(res);
     dispatch({type:'SHOW_MENSAJE',value:res.mensaje.mensaje});
+    dispatch({type:'SOLTAR_AGENDA',value:res.mensaje.mensaje});
     fetchAgendas({ url: "/listadoPreAgendas" }, obtenerAgendas)
   };
   const getRespuestaEliminar = (res) => {
