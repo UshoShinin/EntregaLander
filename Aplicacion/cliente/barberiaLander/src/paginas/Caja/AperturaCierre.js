@@ -475,7 +475,7 @@ const AperturaCierre = () => {
             const productos = cajaState.productosAgregados;
             const codcup = cajaState.codCuponera.value;
             let monto =
-              cajaState.cantidadMedios > 1
+              cajaState.cantidadMedios.value > 1
                 ? cajaState.montoCuponera.value
                 : cajaState.montoTotal.value;
             monto = monto.length > 0 ? parseInt(monto, 10) : 0;
